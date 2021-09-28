@@ -1,0 +1,109 @@
+body{
+  width: 100%;
+  height: 100%;
+  background-color:lightcyan;
+}
+header {
+  background-image: url("https://i.imgur.com/y8T0VBz.jpg?2");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  
+}
+.head-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 20px;
+}
+
+h1{
+  font-size: 4em;
+}
+
+li {
+  list-style: none;
+}
+
+button, .btn-delete {
+  font-size: larger;
+  color: red;
+  background-color: white;
+  border-radius: 10px;
+  border-color: rgb(149, 45, 45);
+  width: 15em;
+  border-style: solid;
+  margin: 10px;
+}
+button:hover, .btn-delete:hover {
+  background-color: rgb(182, 56, 56);
+  border-color: white;
+  color: white;
+  transition-duration: 300ms;
+}
+.edit-btn, .btn-delete {
+  width: 90%;
+  justify-self: center;
+  align-self: flex-start;
+  margin-top: 0;
+}
+.poke-grid{
+  margin-top: 11em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.poke-cell:hover {
+  background-color: rgb(193, 233, 233);
+}
+
+.poke-pic{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10em;
+  height: 10em;  
+  padding: 10px;
+  border-style: solid;
+  border-radius: 5px;
+  margin: 10px;
+  box-shadow: 1px;
+  background-color: white;
+}
+
+.poke-pic:hover {
+  border-color: red;
+}
+
+.poke-pic > img {
+  max-width: 10em;
+  max-height: 10em;
+}
+/* Show & New Page Styling */
+.show-content, .new-content {
+  margin: 10em 2em 2em 4em;
+}
+
+h2{
+  color: black;
+  font-size: 50px;
+}
+.show-info-label{
+  font-size: 25px;
+  font-weight: bold;
+}
+.types, .stats{
+  font-size: 20px;
+  list-style: circle;
+}
+.type-checkboxes {
+  margin-right: 15px;
+}
+
+img {
+  max-height: 15em;
+}

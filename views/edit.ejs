@@ -1,0 +1,46 @@
+<%- include("./partials/head.ejs") %>
+<body>
+  <%- include("./partials/header.ejs") %>
+  <div class="new-content">
+    <h2><%=thisPokemon.name%></h2>
+    <form action="/pokemon/<%= id %>?_method=PUT" method="POST">
+      Name: <input type="text" name="name" value=<%= thisPokemon.name %>>
+      <br>
+      <p><span class="types">Types</span> (Check all that apply) </p>
+      <% pokemonTypes.forEach(type => { %>
+        
+        <label for="<%=type%>"><%=type %>: </label>
+        <input type="checkbox" class="type-checkboxes" name=<%=type %> id=<%=type%> <%=type %> 
+        <% if(thisPokemon.type.includes(type)){%> 
+         checked="on"   <%console.log(type) } %> >
+        <% if(pokemonTypes.indexOf(type) % 5 === 0 && pokemonTypes.indexOf(type) !== 0 ) { %>
+          <br>
+        <% } %>
+      <% }) %>
+      
+      <br>
+      <p class="stats">Stats</p>
+      <% for(stat of pokemonStats) {%> 
+        <%=stat %>: <input type="number" name=<%=stat %> id="stat-field" value=<%=thisPokemon.stats[stat]%> >
+        <br>
+        
+      <%}%>
+      <br>
+      <img src="<%= thisPokemon.img %>" alt="<%thisPokemon.name%>">
+      <br>
+      Pokemon picture URL: <input name="img" type="url" 
+      value=<%=thisPokemon.img%>>
+
+      <br>
+      <br>
+
+      <input type="submit" value="Update Pokedex Entry">
+
+
+    </form>
+
+
+  </div>
+
+
+</body>

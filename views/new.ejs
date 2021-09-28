@@ -1,0 +1,39 @@
+<%- include("./partials/head.ejs") %>
+<body>
+  <%- include("./partials/header.ejs") %>
+  <div class="new-content">
+    <h2>Add a New Pokemon</h2>
+    <form action="/pokemon" method="POST">
+      Name: <input type="text" name="name" placeholder="Pokemon Name">
+      <br>
+      <p><span class="types">Types</span> (Check all that apply) </p>
+      <% pokemonTypes.forEach(type => { %>
+        <%=type %>: <input type="checkbox" name=<%=type %> id= <%=type %> >
+        <% if(pokemonTypes.indexOf(type) % 5 === 0 && pokemonTypes.indexOf(type) !== 0 ) { %>
+          <br>
+        <% } %>
+      <% }) %>
+      
+      <br>
+      <p class="stats">Stats</p>
+      <% for(stat of pokemonStats) {%> 
+        <%=stat %>: <input type="number" name=<%=stat %> id="stat-field">
+        <br>
+        
+      <%}%>
+      <br>
+      Pokemon picture URL: <input name="img" type="url">
+
+      <br>
+      <br>
+
+      <input type="submit" value="Add to Pokedex">
+
+
+    </form>
+
+
+  </div>
+
+
+</body>

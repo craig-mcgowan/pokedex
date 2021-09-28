@@ -1,0 +1,26 @@
+<%- include("./partials/head.ejs") %>
+<body>
+  <%- include("./partials/header.ejs") %> 
+
+
+<div class="show-content">
+  <h2><%= thisPokemon.name %></h2>
+  <img src= <%=thisPokemon.img %> alt= <thead%=thisPokemon.name %> >
+  <p class="show-info-label">Type List</p>
+  <ul>
+    <% thisPokemon.type.forEach(type =>{ %>
+      <li class="types"><%= type %></li>
+    <% }) %>
+  </ul>
+  <table>
+  <th colspan="2" class="show-info-label">Stats</th>
+    <% for (stat in thisPokemon.stats) {  %>
+      <tr>
+      <td class="stats"><%=stat%>:   </td> 
+      <td class="stats"><%=thisPokemon.stats[stat]%></td>
+      </tr>   
+    <% } %>
+  </table>
+</div>
+
+</body>
